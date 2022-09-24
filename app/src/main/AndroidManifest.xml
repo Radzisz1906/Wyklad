@@ -14,21 +14,20 @@
         android:theme="@style/Theme.Wyklad"
         tools:targetApi="31">
         <activity
+            android:name=".Menu"
+            android:exported="false" />
+        <activity
             android:name=".Logowanie"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".Start"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".Ranking"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".Animated"
             android:exported="true">
@@ -41,7 +40,6 @@
         <activity
             android:name=".FragmentActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>

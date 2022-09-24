@@ -31,7 +31,7 @@ class Logowanie : AppCompatActivity() {
             if (log.text.toString().isNotEmpty() && pas.text.toString().isNotEmpty() && baza.AddUser(log.text.toString(),pas.text.toString(),0)){
                 logged = 1;
                 us = log.text.toString()
-                startActivity(Intent(this, MainActivity::class.java));
+                startActivity(Intent(this, Menu::class.java));
                 onStop();
             }
             else{
@@ -43,7 +43,7 @@ class Logowanie : AppCompatActivity() {
             if (baza.LoginUser(log.text.toString(),pas.text.toString())){
                 logged = 1;
                 us = log.text.toString()
-                startActivity(Intent(this, MainActivity::class.java));
+                startActivity(Intent(this, Menu::class.java));
                 onStop();
             }
             else{

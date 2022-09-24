@@ -3,6 +3,7 @@ package com.example.wyklad
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
@@ -25,7 +26,7 @@ abstract class FragmentActivity : AppCompatActivity() {
                 Thread.sleep(6000)
             }
             runOnUiThread {
-                val intent = Intent(this, Start::class.java)
+                val intent = Intent(this, Logowanie::class.java)
                 startActivity(intent)
                 this.finish()
             }
