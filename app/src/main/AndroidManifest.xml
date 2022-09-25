@@ -14,20 +14,26 @@
         android:theme="@style/Theme.Wyklad"
         tools:targetApi="31">
         <activity
+            android:name=".Swiatlo"
+            android:exported="false" />
+        <activity
+            android:name=".Temperature"
+            android:exported="false" />
+        <activity
             android:name=".Menu"
             android:exported="false" />
         <activity
             android:name=".Logowanie"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:name=".Liczby"
+            android:exported="false" />
         <activity
             android:name=".Start"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Ranking"
-            android:exported="false"></activity>
+            android:exported="false" />
         <activity
             android:name=".Animated"
             android:exported="true">

@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 
 class Menu : AppCompatActivity() {
     var optionname = arrayOf(
-        "Gra losujaca"
+        "Gra losujaca",
+        "Temperatura",
+        "Poziom światła"
     )
     var optinimage = intArrayOf(
+        R.drawable.temp,
+        R.drawable.temp,
         R.drawable.temp
     )
     override fun onCreate(savedInstanceState: Bundle?) {

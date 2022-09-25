@@ -32,7 +32,15 @@ class MenuAdapter (
         holder.option.setText(programName[position])
         singleItem.setOnClickListener {
             if (programName[position]=="Gra losujaca"){
-                val intent = Intent(context,Start::class.java)
+                val intent = Intent(context,Logowanie::class.java)
+                context.startActivity(intent)
+            }
+            if (programName[position]=="Temperatura"){
+                val intent = Intent(context,Temperature::class.java)
+                context.startActivity(intent)
+            }
+            if (programName[position]=="Poziom światła"){
+                val intent = Intent(context,Swiatlo::class.java)
                 context.startActivity(intent)
             }
         }

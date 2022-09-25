@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlin.random.Random
 
-class MainActivity : AppCompatActivity() {
+class Liczby : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,12 +24,12 @@ class MainActivity : AppCompatActivity() {
         val baza = DBHelper(applicationContext);
 //        val toast1 = Toast.makeText(applicationContext,"Cos",Toast.LENGTH_SHORT)
         var points = 0;
-        val builder = AlertDialog.Builder(this@MainActivity);
+        val builder = AlertDialog.Builder(this@Liczby);
         var liczba = Random.nextInt(0,20);
         var strzaly = 0;
         builder.setTitle("Przegrałeś");
         builder.setMessage(":(");
-        val wyg = AlertDialog.Builder(this@MainActivity);
+        val wyg = AlertDialog.Builder(this@Liczby);
         builder.setTitle("Wygrałeś!");
 
         button.setOnClickListener {

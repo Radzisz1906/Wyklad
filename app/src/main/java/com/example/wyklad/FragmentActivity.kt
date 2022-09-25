@@ -26,7 +26,7 @@ abstract class FragmentActivity : AppCompatActivity() {
                 Thread.sleep(6000)
             }
             runOnUiThread {
-                val intent = Intent(this, Logowanie::class.java)
+                val intent = Intent(this, Menu::class.java)
                 startActivity(intent)
                 this.finish()
             }

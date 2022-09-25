@@ -27,7 +27,7 @@ class Ranking : AppCompatActivity() {
         }
         button.setOnClickListener{
             if (logged ==1){
-                startActivity(Intent(this, MainActivity::class.java));
+                startActivity(Intent(this, Liczby::class.java));
                 onStop()
             }
             if (logged ==0){
