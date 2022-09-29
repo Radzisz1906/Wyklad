@@ -42,10 +42,6 @@ class MenuAdapter (
                 val intent = Intent(context,Swiatlo::class.java)
                 context.startActivity(intent)
             }
-            if (programName[position]=="Poziomica"){
-                val intent = Intent(context, Poziomica2::class.java)
-                context.startActivity(intent)
-            }
             if (programName[position]=="Wilgotność"){
                 val intent = Intent(context, Wilgotnosc::class.java)
                 context.startActivity(intent)
@@ -58,8 +54,8 @@ class MenuAdapter (
                 val intent = Intent(context, Kompas::class.java)
                 context.startActivity(intent)
             }
-            if (programName[position]=="Koordynaty"){
-                val intent = Intent(context, Koordynaty::class.java)
+            if (programName[position]=="Pogoda"){
+                val intent = Intent(context, Pogoda::class.java)
                 context.startActivity(intent)
             }
         }

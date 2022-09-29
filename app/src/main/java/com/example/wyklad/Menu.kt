@@ -9,21 +9,19 @@ class Menu : AppCompatActivity() {
         "Gra losujaca",
         "Temperatura",
         "Poziom światła",
-        "Poziomica",
         "Wilgotność",
         "Ciśnienie",
         "Kompas",
-        "Koordynaty"
+        "Pogoda"
     )
     var optinimage = intArrayOf(
         R.drawable.numb,
         R.drawable.temp,
         R.drawable.light,
-        R.drawable.level,
         R.drawable.hum,
         R.drawable.press,
         R.drawable.compass,
-        R.drawable.compass
+        R.drawable.pogod
     )
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

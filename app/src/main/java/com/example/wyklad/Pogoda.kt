@@ -9,23 +9,24 @@ import android.location.LocationListener
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
-class Koordynaty : AppCompatActivity(), LocationListener {
+class Pogoda : AppCompatActivity(), LocationListener {
     private lateinit var locationManager: LocationManager
     private val locationPermissionCode = 2
     private lateinit var tvGpsLocation: TextView
-
+    var url = ""
     override fun onCreate(savedInstanceState: Bundle?) {
-
-
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_koordynaty)
+        setContentView(R.layout.activity_pogoda)
 
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
@@ -47,8 +48,19 @@ class Koordynaty : AppCompatActivity(), LocationListener {
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5f, this)
     }
     override fun onLocationChanged(location: Location) {
-        Log.d("COS","ZMIANA")
         tvGpsLocation = findViewById(R.id.temp)
-        tvGpsLocation.text = "Szerokość: " + location.latitude + " , Długość: " + location.longitude
+        url = "https://api.open-meteo.com/v1/forecast?" + "latitude=" + location?.latitude + "&longitude=" + location?.longitude + "&current_weather=true"
+        getWeather()
+    }
+    fun getWeather() {
+        val queue = Volley.newRequestQueue(this)
+        val stringReq = StringRequest(Request.Method.GET, url,
+            Response.Listener<String> { response ->
+                val obj = JSONObject(response)
+                val curr = JSONObject(obj["current_weather"].toString())
+                tvGpsLocation.text = "Temperatura: "+curr["temperature"].toString() + " °C\n"+"Prędkość wiatru: "+curr["windspeed"].toString()+" m/s"
+            },
+            Response.ErrorListener { tvGpsLocation!!.text = "Nie działa" })
+        queue.add(stringReq)
     }
 }

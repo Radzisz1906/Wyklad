@@ -31,7 +31,7 @@ class Logowanie : AppCompatActivity() {
             if (log.text.toString().isNotEmpty() && pas.text.toString().isNotEmpty() && baza.AddUser(log.text.toString(),pas.text.toString(),0)){
                 logged = 1;
                 us = log.text.toString()
-                startActivity(Intent(this, Menu::class.java));
+                startActivity(Intent(this, Liczby::class.java));
                 onStop();
             }
             else{
@@ -51,12 +51,12 @@ class Logowanie : AppCompatActivity() {
             }
         }
         button_ranking.setOnClickListener{
-            startActivity(Intent(this, Ranking::class.java));
+            startActivity(Intent(this, Menu::class.java));
             onStop();
         }
         val button = findViewById<Button>(R.id.but)
         button.setOnClickListener {
-            val intent = Intent(this, Menu::class.java)
+            val intent = Intent(this, Ranking::class.java)
             startActivity(intent)
 
         }
