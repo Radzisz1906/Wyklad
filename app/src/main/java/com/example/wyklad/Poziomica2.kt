@@ -39,15 +39,9 @@ class Poziomica2 : AppCompatActivity(),SensorEventListener {
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         mSensorManager.registerListener(this, mTmp, SensorManager.SENSOR_DELAY_NORMAL)
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_poziomica2)
         animatedview = AnimatedView(this)
         setContentView(animatedview)
-//        val button = findViewById<Button>(R.id.button)
-//        button.setOnClickListener {
-//            val intent = Intent(this, Menu::class.java)
-//            startActivity(intent)
-//
-//        }
+
     }
     override fun onSensorChanged(event: SensorEvent) {
         val value = event.values[0];
@@ -76,8 +70,8 @@ class Poziomica2 : AppCompatActivity(),SensorEventListener {
         }
 
         fun onSensorEvent(event: SensorEvent) {
-            x = x - event.values[0].toInt()
-            y = y - event.values[1].toInt()
+            x -= event.values[0].toInt()
+            y -= event.values[1].toInt()
             if (x <= radius) {
                 x = radius
             }
