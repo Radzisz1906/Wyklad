@@ -92,5 +92,11 @@ class Liczby : AppCompatActivity() {
             startActivity(Intent(this, Ranking::class.java));
             onStop();
         }
+        val but = findViewById<Button>(R.id.button)
+        but.setOnClickListener {
+            val intent = Intent(this, Menu::class.java)
+            startActivity(intent)
+
+        }
     }
 }

@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.wyklad">
 
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,6 +17,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Wyklad"
         tools:targetApi="31">
+        <activity
+            android:name=".Kompas"
+            android:exported="false" />
+        <activity
+            android:name=".Koordynaty"
+            android:exported="false" />
+        <activity
+            android:name=".Predkosciomierz"
+            android:exported="false" />
+        <activity
+            android:name=".Predkosc"
+            android:exported="false" />
+        <activity
+            android:name=".Cisnienie"
+            android:exported="false" />
+        <activity
+            android:name=".Wilgotnosc"
+            android:exported="false" />
+        <activity
+            android:name=".Poziomica2"
+            android:exported="false" />
+        <activity
+            android:name=".Poziomica"
+            android:exported="false" />
         <activity
             android:name=".Swiatlo"
             android:exported="false" />

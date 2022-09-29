@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Toast
 
 
 class MenuAdapter (
@@ -41,6 +40,22 @@ class MenuAdapter (
             }
             if (programName[position]=="Poziom światła"){
                 val intent = Intent(context,Swiatlo::class.java)
+                context.startActivity(intent)
+            }
+            if (programName[position]=="Poziomica"){
+                val intent = Intent(context, Poziomica2::class.java)
+                context.startActivity(intent)
+            }
+            if (programName[position]=="Wilgotność"){
+                val intent = Intent(context, Wilgotnosc::class.java)
+                context.startActivity(intent)
+            }
+            if (programName[position]=="Ciśnienie"){
+                val intent = Intent(context, Cisnienie::class.java)
+                context.startActivity(intent)
+            }
+            if (programName[position]=="Kompas"){
+                val intent = Intent(context, Kompas::class.java)
                 context.startActivity(intent)
             }
         }

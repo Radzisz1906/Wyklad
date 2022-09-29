@@ -15,6 +15,7 @@ import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -23,16 +24,17 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.lang.Math.abs
 
-class Swiatlo : AppCompatActivity(),SensorEventListener {
+class Wilgotnosc : AppCompatActivity(),SensorEventListener {
     private lateinit var mSensorManager : SensorManager
     private var mTmp : Sensor ?= null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        mTmp = mSensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+        mTmp = mSensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY)
         mSensorManager.registerListener(this, mTmp, SensorManager.SENSOR_DELAY_NORMAL)
         val tmp = findViewById<TextView>(R.id.temp)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_swiatlo)
+        setContentView(R.layout.activity_wilgotnosc)
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
             val intent = Intent(this, Menu::class.java)
@@ -42,15 +44,19 @@ class Swiatlo : AppCompatActivity(),SensorEventListener {
     override fun onSensorChanged(event: SensorEvent) {
         val tmp = findViewById<TextView>(R.id.temp)
         val value = event.values[0];
-        if (event?.sensor?.type == Sensor.TYPE_LIGHT) {
-            tmp.text = value.toString().plus(" luxów");
+        if (event?.sensor?.type == Sensor.TYPE_RELATIVE_HUMIDITY) {
+            tmp.text = value.toString().plus(" %");
             SharedData.temperature = value
         }
 
     }
 
     override fun onAccuracyChanged(p0: Sensor?, p1: Int) {
-        print("aaaa")
+        Log.d("COS","ASDOANJSDNJASJD")
     }
 
+    override fun onResume() {
+        mSensorManager.registerListener(this, mTmp, SensorManager.SENSOR_DELAY_NORMAL)
+        super.onResume()
+    }
 }

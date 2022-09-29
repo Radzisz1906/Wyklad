@@ -54,6 +54,12 @@ class Logowanie : AppCompatActivity() {
             startActivity(Intent(this, Ranking::class.java));
             onStop();
         }
+        val button = findViewById<Button>(R.id.button)
+        button.setOnClickListener {
+            val intent = Intent(this, Menu::class.java)
+            startActivity(intent)
+
+        }
 
     }
 }
