@@ -21,6 +21,15 @@
             android:name=".Kompas"
             android:exported="false" />
         <activity
+            android:name=".Koordynaty"
+            android:exported="false" />
+        <activity
+            android:name=".Predkosciomierz"
+            android:exported="false" />
+        <activity
+            android:name=".Predkosc"
+            android:exported="false" />
+        <activity
             android:name=".Cisnienie"
             android:exported="false" />
         <activity
@@ -28,6 +37,9 @@
             android:exported="false" />
         <activity
             android:name=".Poziomica2"
+            android:exported="false" />
+        <activity
+            android:name=".Poziomica"
             android:exported="false" />
         <activity
             android:name=".Swiatlo"
