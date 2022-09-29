@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -18,16 +19,13 @@
         android:theme="@style/Theme.Wyklad"
         tools:targetApi="31">
         <activity
+            android:name=".Koordy"
+            android:exported="false" />
+        <activity
             android:name=".Kompas"
             android:exported="false" />
         <activity
             android:name=".Koordynaty"
-            android:exported="false" />
-        <activity
-            android:name=".Predkosciomierz"
-            android:exported="false" />
-        <activity
-            android:name=".Predkosc"
             android:exported="false" />
         <activity
             android:name=".Cisnienie"
@@ -37,9 +35,6 @@
             android:exported="false" />
         <activity
             android:name=".Poziomica2"
-            android:exported="false" />
-        <activity
-            android:name=".Poziomica"
             android:exported="false" />
         <activity
             android:name=".Swiatlo"

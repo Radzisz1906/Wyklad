@@ -12,7 +12,8 @@ class Menu : AppCompatActivity() {
         "Poziomica",
         "Wilgotność",
         "Ciśnienie",
-        "Kompas"
+        "Kompas",
+        "Koordynaty"
     )
     var optinimage = intArrayOf(
         R.drawable.numb,
@@ -21,6 +22,7 @@ class Menu : AppCompatActivity() {
         R.drawable.level,
         R.drawable.hum,
         R.drawable.press,
+        R.drawable.compass,
         R.drawable.compass
     )
     override fun onCreate(savedInstanceState: Bundle?) {

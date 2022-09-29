@@ -58,6 +58,10 @@ class MenuAdapter (
                 val intent = Intent(context, Kompas::class.java)
                 context.startActivity(intent)
             }
+            if (programName[position]=="Koordynaty"){
+                val intent = Intent(context, Koordynaty::class.java)
+                context.startActivity(intent)
+            }
         }
         return singleItem!!
     }
