@@ -43,7 +43,7 @@ class Logowanie : AppCompatActivity() {
             if (baza.LoginUser(log.text.toString(),pas.text.toString())){
                 logged = 1;
                 us = log.text.toString()
-                startActivity(Intent(this, Menu::class.java));
+                startActivity(Intent(this, Liczby::class.java));
                 onStop();
             }
             else{
@@ -54,7 +54,7 @@ class Logowanie : AppCompatActivity() {
             startActivity(Intent(this, Ranking::class.java));
             onStop();
         }
-        val button = findViewById<Button>(R.id.button)
+        val button = findViewById<Button>(R.id.but)
         button.setOnClickListener {
             val intent = Intent(this, Menu::class.java)
             startActivity(intent)

@@ -33,19 +33,19 @@ class Liczby : AppCompatActivity() {
         builder.setTitle("Wygrałeś!");
 
         button.setOnClickListener {
-            if (numb.text.toString().toInt()>20){
+            if (numb.text.toString()=="" || numb.text.toString().toInt()>20){
                 Toast.makeText(this, "Liczba poza zakresem", Toast.LENGTH_SHORT).show();
             }
             else if (numb.text.toString().toInt()>liczba){
                 Toast.makeText(this, "Za duzo", Toast.LENGTH_SHORT).show();
                 strzaly+=1;
-                shots.text = "Strzały: ".plus(strzaly.toString());
+                shots.text = "Strzały: ".plus((0+strzaly).toString());
 
             }
             else if (numb.text.toString().toInt()<liczba){
                 Toast.makeText(this, "Za malo", Toast.LENGTH_SHORT).show();
                 strzaly+=1;
-                shots.text = "Strzały: ".plus(strzaly.toString());
+                shots.text = "Strzały: ".plus((0+strzaly).toString());
             }
             else if (numb.text.toString().toInt()==liczba){
                 Toast.makeText(this, "Trafione", Toast.LENGTH_SHORT).show();

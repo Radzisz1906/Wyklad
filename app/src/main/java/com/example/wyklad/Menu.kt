@@ -20,7 +20,7 @@ class Menu : AppCompatActivity() {
         R.drawable.light,
         R.drawable.level,
         R.drawable.hum,
-        R.drawable.temp,
+        R.drawable.press,
         R.drawable.compass
     )
     override fun onCreate(savedInstanceState: Bundle?) {
